@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -16,6 +15,13 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: const Text("Welcome to Emart"),
         centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            
+          ],
+        ),
       ),
     );
   }
