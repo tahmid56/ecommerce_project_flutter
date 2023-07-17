@@ -1,5 +1,4 @@
-import 'dart:js';
-
+import 'package:ecommerce_project/features/auth/views/signin_screen.dart';
 import 'package:ecommerce_project/features/auth/views/signup_screen.dart';
 import 'package:ecommerce_project/features/home/views/home_screen.dart';
 import 'package:ecommerce_project/route/go_router_notifier.dart';
@@ -15,7 +14,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       redirect: (context, state) {
         final isLoggedIn = goRouterNotifier.isLoggedIn;
         if (!isLoggedIn) {
-          return '/login';
+          return '/signin';
         }
         return null;
       },
@@ -23,10 +22,18 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         GoRoute(
           name: NamedRoutes.signup,
           path: '/signup',
-          builder: (context, state) => SignUpView(key: state.pageKey),
+          builder: (context, state) => SignUpView(
+            key: state.pageKey,
+          ),
         ),
         GoRoute(
-          name: NamedRoutes.signup,
+            name: NamedRoutes.signin,
+            path: '/signin',
+            builder: (context, state) => SignInView(
+                  key: state.pageKey,
+                )),
+        GoRoute(
+          name: NamedRoutes.home,
           path: '/home',
           builder: (context, state) => HomeView(
             key: state.pageKey,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -19,7 +18,12 @@ class _HomeViewState extends State<HomeView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            
+            Container(
+              height: 400,
+              child: Row(
+                children: const [Text("Hello"), Text("Bye")],
+              ),
+            )
           ],
         ),
       ),
